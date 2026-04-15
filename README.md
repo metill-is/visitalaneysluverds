@@ -1,4 +1,3 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # visitalaneysluverds
@@ -14,16 +13,16 @@ Iceland.
 You can install the development version of visitalaneysluverds from
 [GitHub](https://github.com/) with:
 
-``` r
+```r
 # install.packages("devtools")
-devtools::install_github("bgautijonsson/visitalaneysluverds")
+devtools::install_github("metill-is/visitalaneysluverds")
 ```
 
 ## Example
 
 ### CPI table
 
-``` r
+```r
 library(visitalaneysluverds)
 #> Downloading CPI data from Statistics Iceland and making available to internal functions. This happens once per session.
 d <- vnv()
@@ -32,11 +31,11 @@ d
 #> # A tibble: 411 × 2
 #>    date         cpi
 #>    <date>     <dbl>
-#>  1 1988-05-01  1   
+#>  1 1988-05-01  1
 #>  2 1988-06-01  1.03
 #>  3 1988-07-01  1.07
 #>  4 1988-08-01  1.09
-#>  5 1988-09-01  1.1 
+#>  5 1988-09-01  1.1
 #>  6 1988-10-01  1.10
 #>  7 1988-11-01  1.10
 #>  8 1988-12-01  1.11
@@ -46,7 +45,7 @@ d
 #> # ℹ Use `print(n = ...)` to see more rows
 ```
 
-``` r
+```r
 plot(cpi ~ date, data = d, type = "l")
 ```
 
@@ -56,7 +55,7 @@ You can input a date on which the CPI should be equal to 1. The date has
 to be between 1988-05-01 and the month preceding the current month. If
 no date is input the CPI will be equal to 1 on 1988-05-01.
 
-``` r
+```r
 d <- vnv(date_unity = as.Date("2018-01-1"))
 plot(cpi ~ date, data = d, type = "l")
 ```
@@ -68,7 +67,7 @@ plot(cpi ~ date, data = d, type = "l")
 The package offers use of the function `vnv_convert()` to convert prices
 to a common CPI standard.
 
-``` r
+```r
 price <- c(1, 2, 3, 4, 5)
 date <- as.Date(c("2020-01-01", "2019-01-01", "2018-01-01", "2017-01-01", "2016-01-01"))
 d <- data.frame(

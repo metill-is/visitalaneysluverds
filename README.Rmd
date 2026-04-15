@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # visitalaneysluverds
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/metill-is/visitalaneysluverds/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/metill-is/visitalaneysluverds/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 
@@ -27,7 +28,7 @@ You can install the development version of visitalaneysluverds from [GitHub](htt
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("bgautijonsson/visitalaneysluverds")
+devtools::install_github("metill-is/visitalaneysluverds")
 ```
 
 ## Example
@@ -61,8 +62,8 @@ The package offers use of the function `vnv_convert()` to convert prices to a co
 price <- c(1, 2, 3, 4, 5)
 date <- as.Date(c("2020-01-01", "2019-01-01", "2018-01-01", "2017-01-01", "2016-01-01"))
 d <- data.frame(
-    date = date,
-    price = price
+  date = date,
+  price = price
 )
 
 d$price_2020_01_01 <- vnv_convert(d$price, d$date, convert_date = as.Date("2020-01-01"))
